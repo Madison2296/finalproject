@@ -1,0 +1,13 @@
+I am interested in the evolution of surviving reptiles after the KT extinction.
+I plan to use data from the PBDB to explore fossil occurances of reptiles.
+I will need to analyze and quantify data regarding the location and age of these fossils.
+I will then need to visually present this data.
+
+Groups:
+1. falconiforme, 287 unique species
+2. pelecaniform, 268 unique species
+3. charadriiform, 691 unique species
+
+shell command
+tail -n +17 $1|cut -d ',' -f 6-7|grep -n "species"|sort -d|uniq|wc -l 
+with $1 representing the file name
