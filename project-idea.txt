@@ -1,5 +1,5 @@
-I am interested in the evolution of surviving reptiles after the KT extinction.
-I plan to use data from the PBDB to explore fossil occurances of reptiles.
+I am interested in the evolution of birds after the KT extinction.
+I plan to use data from the PBDB to explore fossil occurances of birds.
 I will need to analyze and quantify data regarding the location and age of these fossils.
 I will then need to visually present this data.
 
