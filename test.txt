@@ -1,0 +1,817 @@
+Praemancalla wetmorei n. sp.,species
+Numenius arquatus,species
+Numenius arquata,species
+Numenius arquatus,species
+Larus sp.,genus
+Stercorarius sp.,genus
+Recurvirostra sp.,genus
+Calidris albus cf.,species
+Calidris canutus cf.,species
+Turnix sp.,genus
+Numenius phaeopus,species
+Larus fuscus,species
+Larus cirrhocephalus,species
+Burhinidae indet.,family
+Burhinidae cf. indet.,family
+Telmatornis priscus,species
+Palaeotringa littoralis ?,species
+Graculavus velox ?,species
+Uria sp.,genus
+Turnix sp.,genus
+Turnix varia,species
+Tringa glareola,species
+Gallinago hardwickii,species
+Calidris ruficollis,species
+Larus ? sp. ?,genus
+Limosa limosa,species
+Scolopax rusticola,species
+Laridae aff. indet.,family
+Calidris temminchii,species
+Cerorhinca minor,species
+Synthliboramphus ? sp.,genus
+Mancalla cedrosensis,species
+Mancalla sp.,genus
+Uria sp.,genus
+Cepphus sp.,genus
+Aethia barnesi n. sp.,species
+Praemancalla sp.,genus
+Laridae indet.,family
+Burhinidae indet.,family
+Praemancalla sp. n. sp.,genus
+Praemancalla lagunensis,species
+Paractitis n. gen. bardi n. sp.,species
+Charadrii indet.,suborder
+Scolopacidae indet.,family
+Larus hyperboreus,species
+Uria aalge,species
+Tringinae indet.,subfamily
+Catharacta sp.,genus
+Stercorarius pomarinus aff.,species
+Stercorarius parasiticus aff.,species
+Stercorarius longicaudus aff.,species
+Larus argentatus aff.,species
+Larus delawarensis aff.,species
+Larus atricilla aff.,species
+Larus ribibundus,species
+Larus minutus aff.,species
+Sterna maxima aff.,species
+Sterna nilotica aff.,species
+Alca sp.,genus
+Alca ausonia,species
+Alca antiqua,species
+Alca torda aff.,species
+Pinguinus alfrednewtoni n. sp.,species
+Miocepphus mergulellus n. sp.,species
+Fratercula arctica aff.,species
+Fratercula cirrhata aff.,species
+Haematopus palliatus aff.,species
+Haematopus ostralegus aff.,species
+Pluvialis squatarola aff.,species
+Numenius borealis aff.,species
+Capella media aff.,species
+Tringa ochropus aff.,species
+Calidris melanotos aff.,species
+Larus sp.,genus
+Miocepphus mcclungi,species
+Miocepphus undescribedspecies informal,species
+Laridae indet.,family
+Mancalla sp.,genus
+Aethia psittacula,species
+Synthliboramphus antiquus,species
+Jacana sp.,genus
+Jiliniornis n. gen. huadianensis n. sp.,species
+Burhinus sp.,genus
+Miocepphus blowi n. sp.,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Larus hyperboreus,species
+Pinguinus impennis,species
+Uria aalge,species
+Uria aalge,species
+Uria lomyia,species
+Alca torda,species
+Pinguinus impennis,species
+Alle alle,species
+Stercorarius sp.,genus
+Larus sp.,genus
+Mancalla sp.,genus
+Larus sp.,genus
+Limnodromus scolopaceus,species
+Larus sp.,genus
+Paractiornis n. gen. perpusillus n. sp.,species
+Bartramia umatilla n. sp.,species
+Recurvirostra sp.,genus
+Turnipax oechslerorum n. sp.,species
+Alle alle,species
+Haematopus sp.,genus
+Philohela minor,species
+Bartramia longicauda,species
+Catoptrophorus semipalmatus,species
+Erolia minutilla,species
+Capella gallinago,species
+Philohela minor,species
+Philohela minor,species
+Bartramia longicauda,species
+Catoptrophorus semipalmatus,species
+Sterna sp.,genus
+Burhinus lucorum n. sp.,species
+Boutersemia n. gen. belgica n. sp.,species
+Boutersemia parvula n. sp.,species
+Boutersemia cf. sp.,genus
+Scolopaci ? indet.,suborder
+Limosa fedoa ?,species
+Totanus sp.,genus
+Larus glaucescens,species
+Ptychoramphus aleuticus,species
+Uria aalge,species
+Alca antiqua,species
+Larus dominicanus,species
+Haematopus unicolor,species
+Coenocorypha iredalei,species
+Coenocorypha iredalei,species
+Charadrius obscurus,species
+Larus novaehollandiae,species
+Larus dominicanus,species
+Charadrius bicinctus,species
+Haematopus finschi,species
+Haematopus unicolor,species
+Larus dominicanus,species
+Graculavidae indet.,family
+Telmatornis priscus,species
+Cerorhinca sp.,genus
+Uria paleohesperis n. sp.,species
+Cepphus olsoni n. sp.,species
+Aethia ? sp.,genus
+Praemancalla wetmorei cf.,species
+Cepphus sp.,genus
+Mancalla milleri,species
+Mancalla diegensis,species
+Mancalla cedrosensis cf.,species
+Alca stewarti n. sp.,species
+Catarractes antiquus n. sp.,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Miocepphus mcclungi,species
+Miocepphus bohaskai n. sp.,species
+Miocepphus bohaskai,species
+Pseudocepphus n. gen. teres n. sp.,species
+Alca torda cf.,species
+Alca torda cf.,species
+Alca torda cf.,species
+Catharacta antarctica,species
+Turnix nigricollis,species
+Scolopacidae indet.,family
+Uria aalge,species
+Calidris spp.,genus
+Turnix varia,species
+Alcodes ulnulus aff.,species
+Charadriiformes indet.,order
+Larus sp.,genus
+Uria aalge,species
+Synthliboramphus antiquus,species
+Cerorhinca monocerata cf.,species
+Mancalla sp.,genus
+Pluvialis dominica,species
+Philohela minor,species
+Capella gallinago,species
+Actitis cf. macularia,species
+Tringa cf. solitaria,species
+Limosa cf. sp.,genus
+Scolopacidae indet.,family
+Alcidae indet.,family
+Philohela minor,species
+Uria ? sp.,genus
+Fraterculini indet.,tribe
+Cepphus ? sp.,genus
+Graculavidae ? indet.,family
+Scolopaci indet.,suborder
+Charadrius vociferus,species
+Numenius tahitiensis,species
+Numenius tahitiensis,species
+Alcidae indet.,family
+Dakotornis n. gen. cooperi n. sp.,species
+Mancalla lucasi,species
+Alca carolinensis n. sp.,species
+Alca minor n. sp.,species
+Alca olsoni n. sp.,species
+Mancalla emlongi n. sp.,species
+Mancalla lucasi n. sp.,species
+Mancalla lucasi,species
+Mancalla vergrandis n. sp.,species
+Miomancalla howardi n. sp.,species
+Miomancalla howardi,species
+Mancalla californiensis n. sp.,species
+Mancalla californiensis,species
+Mancalla californiensis,species
+Pliolunda diegense,species
+Fratercula dowi n. sp.,species
+Fratercula dowi,species
+Fratercula dowi,species
+Fratercula dowi,species
+Fratercula dowi,species
+Fratercula dowi,species
+Fratercula dowi,species
+Cerorhinca minor n. sp.,species
+Mancalla cedrosensis,species
+Mancalla sp.,genus
+Mancalla cedrosensis n. sp.,species
+Synthliboramphus sp.,genus
+Nupharanassa n. gen. bulotorum n. sp.,species
+Janipes n. gen. nymphaeobates n. sp.,species
+Nupharanassa tolutaria n. sp.,species
+Pliolunda n. gen. diegense n. sp.,species
+Mancalla californiensis,species
+Praemancalla n. gen. lagunensis n. sp.,species
+Mancalla milleri n. sp.,species
+Alca sp.,genus
+Cerorhinca sp.,genus
+Aethia rossmoori n. sp.,species
+Alcidae sp.,family
+Alcodes ulnulus n. sp.,species
+Plautus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Laridae indet.,family
+Alcidae indet.,family
+Pinguinus impennis,species
+Pinguinus impennis,species
+Uria aalge,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Alca sp.,genus
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Uria ausonia n. sp.,species
+Calidris pacis n. sp.,species
+Erolia penepusilla n. sp.,species
+Limosa sp.,genus
+Larus elmori,species
+Australca n. gen. grandis n. sp.,species
+Palostralegus n. gen. sulcatus n. sp.,species
+Larus elmori,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alcidae indet.,family
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Alca impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Pinguinus impennis,species
+Charadriiformes indet.,order
+Alca torda,species
+Calidris alpina,species
+Arenaria interpres,species
+Pluvialis apricaria,species
+Stercorarius longicaudus,species
+Rissa tridactyla,species
+Limosa limosa,species
+Alle alle,species
+Alca ausonia,species
+Fratercula sp.,genus
+Alca antiqua,species
+Larus sp.,genus
+Rissa tridactyla,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Fratercula sp.,genus
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Uria algae,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Larus californicus,species
+Uria aalge,species
+Cepphus columba,species
+Synthliboramphus hypoleucus,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Uria aalge,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Fratercula sp.,genus
+Charadrius semipalmatus,species
+Synthliboramphus hypoleucus,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Larus californicus,species
+Uria aalge,species
+Synthliboramphus hypoleucus,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Alle alle,species
+Ptychoramphus tenuis,species
+Cepphus grylle,species
+Gallinago gallinago,species
+Alca torda,species
+Alca torda,species
+Pinguinus impennis,species
+Uria aalge,species
+Alca torda,species
+Alca torda,species
+Alle alle,species
+Arenaria interpres,species
+Fratercula arctica,species
+Uria aalge,species
+Calidris alpina,species
+Tringa ochropus,species
+Uria aalge,species
+Brachyramphus pliocenus n. sp.,species
+Mancalla californiensis,species
+Alcidae indet.,family
+Cerorhinca dubia n. sp.,species
+Limosa vanrossemi n. sp.,species
+Charadrius vociferus,species
+Tringa flaviceps,species
+Capella delicata,species
+Turnix varia,species
+Larus novaehollandiae,species
+Divisulcus n. gen. demerei n. sp.,species
+Uria brodkorbi n. sp.,species
+Gallinago sp.,genus
+Alcini indet.,tribe
+Haematopus sp.,genus
+Charadrius vociferus,species
+Burhinus superciliaris,species
+Steganopus sp.,genus
+Pluvialis dominica,species
+Pluvialis squatarola,species
+Charadrius semipalmatus,species
+Tringa solitaria,species
+Totanus flavipes,species
+Totanus melanoleucus,species
+Catoptrophorus semipalmatus,species
+Calidris canutus,species
+Erolia melanotos,species
+Ereunetes pusillus,species
+Ereunetes mauri,species
+Micropalama himantopus,species
+Bartramia longicauda,species
+Numenius phaeopus,species
+Limosa fedoa,species
+Arenaria interpres,species
+Himantopus mexicanus,species
+Phalaropus fulicarius,species
+Steganopus tricolor,species
+Thinocorus rumicivorus,species
+Larus pipixcan,species
+Numenius madagascariensis,species
+Phalaropus lobatus,species
+Larus sp.,genus
+Rhegminornis calobates n. sp.,species
+Gallinago gallinago,species
+Scolopax hutchensi,species
+Limnodromus scolopaceus,species
+Limnodromus scolopaceus,species
+Scolopax hutchensi,species
+Tringa cf. sp.,genus
+Gallinago gallinago,species
+Scolopax hutchensi n. sp.,species
+Jacana spinosa,species
+Calidris pusilla cf.,species
+Jacana farrandi n. sp.,species
+Limnodromus scolopaceus,species
+Gallinago gallinago,species
+Scolopax minor,species
+Viator n. gen. picis n. sp.,species
+Belonopterus edmondi n. sp.,species
+Tringa ameghini n. sp.,species
+Micropalama chapmani n. sp.,species
+Nuntius n. gen. solitarius n. sp.,species
+Thinocorus koepckae n. sp.,species
+Pluvialis dominica,species
+Pluvialis squatarola,species
+Charadrius vociferus,species
+Charadrius collaris,species
+Charadrius semipalmatus,species
+Tringa solitaria,species
+Totanus flavipes,species
+Totanus melanoleucas,species
+Actitis macularia,species
+Catoptrophorus semipalmatus,species
+Erolia minutilla,species
+Erolia melanotos,species
+Micropalama himantopus,species
+Arenaria interpres,species
+Numenius borealis cf.,species
+Steganopus tricolor,species
+Jacana spinosa,species
+Burhinus supercilliaris,species
+Thinocoridae indet.,family
+Thinocorus rumicivorus,species
+Larus atricilla,species
+Larus pipixcan,species
+Recurvirostra sp.,genus
+Tringa sp.,genus
+Himantopus sp.,genus
+Actitis macularia,species
+Limnodromus sp.,genus
+Gallinago sp.,genus
+Scolopax sp.,genus
+Scolopacidae indet.,family
+Charadrius vociferus,species
+Charadrius montanus,species
+Numenius borealis,species
+Numenius americanus,species
+Calidris melanotos,species
+Capella gallinago,species
+Larus cf. sp.,genus
+Tringa melanoleuca,species
+Larus lacus n. sp.,species
+Larus perpetuus n. sp.,species
+Bartramia longicauda,species
+Catoptrophorus cf. semipalmatus,species
+Scolopax minor,species
+Philohela minor,species
+Dorypaltus n. gen. prosphatus n. sp.,species
+Tringa melanoleuca,species
+Tringa solitaria,species
+Burhinus n. gen. nanus n. sp.,species
+Ereunetes rayi n. sp.,species
+Dorypaltus prophatus,species
+Charadrius vociferus,species
+Philohela minor,species
+Numenius americanus,species
+Actitis macularia,species
+Totanus melanoleucas,species
+Limnodromus sp.,genus
+Recurvirostra americana,species
+Recurvirostra sp.,genus
+Calidris canutus,species
+Pagophila eburnes,species
+Larus hyperboreus,species
+Rissa tridactyla,species
+Larus spp.,genus
+Plautus alle ?,species
+Uria sp.,genus
+Burhinidae indet.,family
+Charadriiformes indet.,order
+Palaeotringa vetus,species
+Calidris fusicollis,species
+Gallinago azovica,species
+Laridae ? indet.,family
+Laridae ? indet.,family
+Charadriiformes unnamed species 2 informal,order
+Charadriiformes unnamed species 2 informal,order
+Charadriiformes indet.,order
+Charadriiformes unnamed species 1 informal,order
+Hakawai n. gen. melvillei n. sp.,species
+Hakawai melvillei,species
+Hakawai melvillei,species
+Hakawai melvillei,species
+Hakawai melvillei,species
+Hakawai melvillei,species
+Hakawai melvillei,species
+Graculavidae indet.,family
+Charadrii indet.,suborder
+Laridae sp.,family
+Larus sp.,genus
+Larus pristinus n. sp.,species
+Larus elmorei n. sp.,species
+Sterna fuscata,species
+Charadrius sanctaehelenae,species
+Gygis alba,species
+Larus sp.,genus
+Charadrius sanctaehelenae,species
+Sterna fuscata,species
+Charadrius sanctaehelenae,species
+Gygis alba,species
+Sterna fuscata,species
+Gygis alba,species
+Sterna fuscata,species
+Synthliboramphus hypoleucus,species
+Fratercula cirrhata,species
+Synthliboramphus antiquus,species
+Limosa fedoa,species
+Arenaria melanocephala,species
+Phalaropus fulicaria,species
+Larus californicus,species
+Larus philadelphia,species
+Catoptrophorus semipalmatus,species
+Calidris alba,species
+Phalaropus fulicaria,species
+Larus sp.,genus
+Fratercula cirrhata,species
+Pluvialis squatarola,species
+Calidris alba,species
+Uria aalge,species
+Fratercula cirrhata,species
+Sterna neglecta,species
+Numenius phaeopus,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Fratercula dowi,species
+Uria aalge,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Pluvialis squatarola,species
+Charadrius semipalmatus,species
+Numenius phaeopus,species
+Phalaropus fulicaria,species
+Larus californicus,species
+Larus delawarensis,species
+Larus philadelphia,species
+Larus sp.,genus
+Rissa tridactyla,species
+Uria aalge,species
+Synthliboramphus antiquus,species
+Synthliboramphus hypoleucas,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Arenaria melanocephala,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Uria aalgae,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Fratercula dowi,species
+Uria aalge,species
+Larus argentatus,species
+Larus robustus n. sp.,species
+Larus oregonus n. sp.,species
+Larus philadelphia,species
+Xema sabinii,species
+Sterna elegans ?,species
+Sterna fosteri ?,species
+Phalaropus lobatus,species
+Numenius americanus ?,species
+Limnodromus griseus ?,species
+Recurvirostra americana,species
+Himantopus mexicanus,species
+Stercorarius schufeldti n. sp.,species
+Larus robustus,species
+Larus californicus,species
+Larus oregonus,species
+Larus philadelphia,species
+Sterna forsteri,species
+Chlidonias nigra,species
+Erolia melanotos,species
+Phalaropus lobatus,species
+Alcidae indet.,family
+Laridae indet.,family
+Alca torda,species
+Alca impennis,species
+Catarractes affinis n. sp.,species
+Brachyramphus dunkeli n. sp.,species
+Cerorhinca reai n. sp.,species
+Cerorhinca sp.,genus
+Synthliboramphus rineyi n. sp.,species
+Haematopus moquini,species
+Larus dominicanus,species
+Sterna bergii,species
+Sterna hirundo,species
+Burhinus capensis,species
+Larus dominicanus,species
+Sterna sandvicensis,species
+Larus dominicanus,species
+Larus hartlaubii,species
+Stercorarius antarcticus,species
+Alle alle,species
+Fratercula arctica,species
+Arenaria interpress,species
+Numenius arquata,species
+Larus canus,species
+Larus fuscus,species
+Laridae indet.,family
+Cepphus grylle,species
+Cepphus grylle ?,species
+Alca torda,species
+Larus sp.,genus
+Larus glaucescens,species
+Larus hyperboreus,species
+Rissa brevirostris,species
+Uria sp.,genus
+Uria aalge,species
+Cepphus columba,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Aethia pusilla,species
+Aethia cristatella,species
+Aethia pygmaea,species
+Cerorhinca monocerata,species
+Fratercula cirrhata,species
+Fratercula corniculata,species
+Larus hyperboreus,species
+Uria lomvia,species
+Synthliboramphus antiquus,species
+Ptychoramphus aleuticus,species
+Brachyramphus sp.,genus
+Aethia pusilla,species
+Aethia cristatella,species
+Aethia pygmaea,species
+Cerorhinca monocerata,species
+Fratercula sp.,genus
+Fratercula cirrhata,species
+Fratercula corniculata,species
+Catharacta sp.,genus
+Catharacta maccormicki,species
+Catharacta antarctica,species
+Sterna vittata,species
+Turnix velox,species
+Charadrius bicinctus,species
+Pluvialis squatarola,species
+Turnix sp.,genus
+Mancalla milleri,species
+Cerorhinca reai,species
+Mancalla milleri,species
+Mancalla diegenesis,species
+Mancalla emlongi,species
+Mancalla milleri,species
+Ptychoramphus tenuis,species
+Mancalla diegenesis,species
+Brachyramphus pliocenum,species
+Mancalla diegenesis,species
+Mancalla emlongi,species
+Ptychoramphus tenuis,species
+Synthliboramphus rineyi,species
+Mancalla emlongi,species
+Mancalla milleri,species
+Mancalla emlongi,species
+Mancalla emlongi,species
+Larus sp.,genus
+Brachyramphus pliocenum,species
+Mancalla emlongi,species
+Mancalla sp.,genus
+Mancalla emlongi,species
+Mancalla sp.,genus
+Mancalla emlongi,species
+Mancalla milleri,species
+Synthliboramphus rineyi,species
+Alcidae indet.,family
+Brachyramphus dunkeli,species
+Brachyramphus pliocenum,species
+Cerorhinca reai n. sp.,species
+Mancalla milleri,species
+Ptychoramphus tenuis,species
+Synthliboramphus rineyi,species
+Rissa estesi,species
+Brachyramphus pliocenum,species
+Mancalla diegenesis,species
+Mancalla milleri,species
+Mancalla emlongi,species
+Mancalla emlongi,species
+Sterna sp.,genus
+Brachyramphus pliocenum,species
+Charadrius sp.,genus
+Mancalla diegenesis,species
+Rissa estesi n. sp.,species
+Brachyramphus pliocenum,species
+Mancalla emlongi,species
+Brachyramphus dunkeli n. sp.,species
+Mancalla diegenesis,species
+Mancalla emlongi,species
+Mancalla milleri,species
+Mancalla sp.,genus
+Larus sp.,genus
+Cerorhinca reai,species
+Mancalla diegenesis,species
+Mancalla emlongi,species
+Mancalla milleri,species
+Mancalla vegrandis,species
+Synthliboramphus rineyi,species
+Mancalla milleri,species
+Mancalla diegenesis,species
+Synthliboramphus rineyi,species
+Mancalla milleri,species
+Mancalla sp.,genus
+Mancalla milleri,species
+Fluviatilavis n. gen. antunesi n. sp.,species
+Neilus n. gen. sansomae n. sp.,species
+Neilus sansomae,species
+Neilus sansomae,species
+Neilus sansomae,species
+Chionoides n. gen. australiensis n. sp.,species
+Turnix varia,species
+Turnix velox,species
+Burhinus magnirostris,species
+Larus novaehollandiae,species
+Sterna nereis,species
+Coenocorypha aucklandica cf.,species
+Coenocorypha aucklandica cf.,species
+Scolopacidae indet.,family
+Scolopacidae indet.,family
+Larus sp.,genus

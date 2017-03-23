@@ -1,0 +1,65 @@
+---
+title: "Lightning Presentation"
+author: "Madison Downing"
+date: "March 12, 2017"
+output: html_document
+---
+github link: https://github.com/Madison2296/finalproject
+
+<img src='bird_friends.jpg'>
+
+# The Main Question:
+
+### How do fossil records of birds compare to that of mammals?
+
+By comparing fossil timelines, extinction and speciation rates, and fossil locations we can better understand how the two groups may interact.
+
+## The Question for Today:
+
+#### How can we visualize the locations of the fossils while comparing birds and mammals?
+
+We are working with a csv file that includes a header and a multitude of variables
+
+We will need to take our data file, remove the header, extract our relevant data, and rewrite this data to a new file
+
+We will do this twice. Once for the bird data and once for the mammal data
+
+Unix code to reamove the header:
+tail -n +19 filename > cleaned_filename
+
+This is the function we will use in python
+
+```
+def locations(openfile, writefile):
+    newfile = openfile
+    output = open(writefile, "w")
+    with open(newfile, 'r') as ff:
+        readfile = ff.readlines() # open and read file
+    for line in readfile: #go through each line
+        taxon = line.split(",")[9]
+        if taxon == '"species"': #only continue if the line contains a species
+            species = line.split(",")[8].replace('"','') #extract species names
+            genus = species.split(" ")[0] #extract genus name
+            lat = line.split(",")[18].replace('"','') #extract latitude
+            lng = line.split(",")[17].replace('"','') #extract longitude
+            outline = "{},{},{}\n".format(genus,lat,lng)
+            output.write(outline) #write data to the file
+    output.close()
+```
+#### Time to make a map
+
+```{r}
+library(ggplot2)
+library(ggmap)
+library(maps)
+library(mapdata)
+bird_locations <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/aves_genus_locations.csv", header = F, as.is = T)
+names(bird_locations) <- c("genus", "latitude", "longitude")
+mammal_locations <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/mammal_genus_locations.csv")
+names(mammal_locations) <- c("genus", "latitude", "longitude")
+fossil_locations <- ggplot() + geom_point(data = bird_locations, aes(x = longitude, y = latitude), col = adjustcolor("yellow", alpha = 1)) + geom_point(data = mammal_locations, aes(x = longitude, y = latitude), col = adjustcolor("red", alpha = 0.1))
+world <- map_data("world")
+fossil_locations <- fossil_locations + geom_polygon(data = world, aes(x=long, y=lat, group = group), fill = NA, color = "black") + coord_fixed(1.3)
+fossil_locations <- fossil_locations + ggtitle("Fossil Occurences of Aves and Mammals")
+fossil_locations
+```

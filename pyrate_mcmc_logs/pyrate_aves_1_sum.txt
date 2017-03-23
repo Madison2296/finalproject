@@ -1,0 +1,33 @@
+
+PyRate build 20170222
+
+input: ['pyrate_aves_PyRate.py'] output: /home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/pyrate_mcmc_logs/pyrate_aves_1
+
+PyRate was called as follows:
+Namespace(A=2, ADE=0, B=1, BF=[], M=10, N=None, S=1000, SE_stats=[], T=1.0, a=0.3, b=0, bound=[inf, 0], cauchy=[-1, -1], check_names='', cite=False, clade=-1, col_tag=[], combLog='', d='', data_info=False, discrete=False, dpp_eK=2.0, dpp_f=500, dpp_grid=1.5, dpp_hp=2.0, dpp_nB=0, edgeShift=[inf, 0], fR=1.0, fS=0.7, fU=[0.02, 0.18, 0], filter=[inf, 0], filter_taxa='', fixSE='', fixShift='', frac_sampled_singleton=0, ginput='', grid_plot3=0.1, initDiv=0, input_data=['pyrate_aves_PyRate.py'], j=1, k=10, logT=2, mBDI=-1, mC=False, mCov=0, mDeath=False, mG=False, mHPP=False, mL=1, mM=1, mPoiD=False, mProb='', multiR=1, n=1000000, nT=5, ncat=4, out='', p=1000, pC=1, pL=[1.1, 1.1], pM=[1.1, 1.1], pP=[1.5, 1.1], pS=2.5, plot='', plot2='', plot3='', qShift='', r=1, reduceLog='', resample=0, rescale=1, restore_mcmc='', root_plot=0, s=1000, singleton=0, sw=100, t=0.03, tC=[0.2, 0.2, 0.15], tHP=[1.2, 1.2], tQ=[1.2, 1.2], tR=1.2, tS=1.0, tT=1.0, tag='', thread=[0, 0], trait=1, trait_file='', translate=0, use_DA=False, wd='')
+
+Using Gamma priors on the birth-death rates (G_l[1.1,1.1], G_m[1.1,1.1]).
+Using Non-Homogeneous Poisson Process of preservation (NHPP).
+
+Please cite: 
+Silvestro, D., Schnitzler, J., Liow, L.H., Antonelli, A. and Salamin, N. (2014)
+Bayesian Estimation of Speciation and Extinction from Incomplete Fossil
+Occurrence Data. Systematic Biology, 63, 349-367.
+
+Silvestro, D., Salamin, N., Schnitzler, J. (2014)
+PyRate: A new program to estimate speciation and extinction rates from
+incomplete fossil record. Methods in Ecology and Evolution, 5, 1126-1131.
+
+Silvestro D., Cascales-Minana B., Bacon C. D., Antonelli A. (2015)
+Revisiting the origin and diversification of vascular plants through a
+comprehensive Bayesian analysis of the fossil record. New Phytologist,
+doi:10.1111/nph.13247. 
+
+
+Feedback and support: pyrate.help@gmail.com
+OS: Linux 4.8.0-32-generic
+Python version: 2.7.13 |Continuum Analytics, Inc.| (default, Dec 20 2016, 23:09:15) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
+
+Numpy version: 1.12.0
+Scipy version: 0.18.1

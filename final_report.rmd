@@ -1,0 +1,295 @@
+---
+title: "The Coevolution of Birds and Mammals"
+author: "Madison Downing"
+date: "March 18, 2017"
+output: pdf_document
+fontsize: 12pt
+bibliography: biblio.bib
+csl: ecology-letters.csl
+---
+
+# Summary
+
+1. Many studies have been done in light of new information on climate change and habitat destruction to better understand how we as humans are influencing extinction and species diversity. In order to collect more information on the subject it can be important to look at the bigger picture by exploring several groups over all of geological history. 
+
+2. Understanding the location of fossil records provides information for future studies and helps refine areas of interest.
+
+3. Exploring the timeline of fossil records allows visualization of past diversity trends over time.
+
+4. The PyRate program allows for exploration of predicted speciation and extinction rates using collected fossil records.
+
+# Introduction
+
+  When attempting to learn more about current species and how the current environment influences said species it can be important to look to the past first. For example, in recent studies of current extinction rates, these rates must be compared to past extinction rates, for the findings to hold any weight [@Ceballose1400253]. Here we investigate the fossil records, from the paleobiology database, of Aves and Laurasiatheria (a representative for the group mammalia). We more specifically analyze the location of the fossils, the timeline of the species in each group, and their projected exinction and speciation rates. 
+  
+  We chose to study two groups rather than one because we are interested in learning how the groups evolved in relation to each other and how they might have influenced each other. When studying the genome size of each group, it was found that both groups had a similar amount of DNA despite variations in the addition and removal of genome sequences during evolution [@Kapusta21022017]. It was also found that despite having similar genome sizes, there is less genetic variance in birds. This is explained by the avian constraint hypothesis which names constraints on protiens as the reason for this lack of genetic divergence [@Stanley_1999]. With this information we expect that speciation and extinction rates and species timelines for the two groups will be relatively similar, but that mammals will progress quicker than birds. 
+
+# Methods
+
+## The Data set
+  The data used in this study comes from the paleobiological database website. All data files are csv formatted files and consist of a header describing the data set, a line to describe the information in each column of data, and several thousand fossil occurance entries.
+  Since the main focus of this paper is to compare bird and mammal fossil records, data for the groups Aves and Mammalia were downloaded. However, the number of occurences recorded for each group was drastically different. The Aves data had only around 6,000 entries, where as the Mammalia data had over 100,000. In order to make the data sets more even and therefore more easily comparable, a sample group was chosen to represent Mammalia. Laurasiatheria was decided upon because it included a large proportion of all extant mammals and it's timeline matched that of the Aves group. The group still had more entries than Aves (around 16,000), but it was a much more manageable number for comparisons.
+
+## Data Preparation
+
+All working python code described in this section can be further investigated in the file called 'python_code.ipynb'
+
+### Removing the header
+To remove the header we can use the following function named 'removing_header.sh', which takes in three arguments: the number of the line at which to start the new file, the input file, and the output file. The line number to start at is included as a variable because certain information may need to be included or excluded depending on the function that is going to be run. For example, any files to be run through python should not have any header information, but the PyRate program requires files to have the header line that describes each column of information.
+```
+#! /bin/bash/
+
+tail -n +$num_lines $input_file > $output_file
+```
+### Extracting Data
+
+*For comparing locations:*
+
+The following function takes in two arguments, a file to read from and a file to write to. The purpose of this code is to take a file and extract the genus name, latitude, and longitude of each record and write this to each line of a new csv file.
+```
+def locations(openfile, writefile):
+    newfile = openfile
+    output = open(writefile, "w")
+    with open(newfile, 'r') as ff:
+        readfile = ff.readlines() # open and read file
+    for line in readfile: #go through each line
+        taxon = line.split(",")[9]
+        if taxon == '"species"': #only continue if the line contains a species
+            species = line.split(",")[8].replace('"','') #extract species names
+            genus = species.split(" ")[0]
+            lat = line.split(",")[18].replace('"','') #extract the latitude
+            lng = line.split(",")[17].replace('"','') #extract the latitude
+            outline = "{},{},{}\n".format(genus,lat,lng) #write the format
+            output.write(outline) #write to the file
+    output.close()
+```
+new output files:
+```{r, echo=FALSE}
+aves_loc_data <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/aves_genus_locations.csv", header = F, as.is = T)
+names(aves_loc_data) <- c("genus", "latitude", "longitude")
+head(aves_loc_data)
+laura_loc_data <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/laura_genus_locations.csv", header = F, as.is = T)
+names(laura_loc_data) <- c("genus", "latitude", "longitude")
+head(laura_loc_data)
+```
+
+*For exploring timelines:*
+  
+  The following functions are used to create a file containing the genus name, the species name, and the minimum and maximum age for that species. The first function takes the file to read from as an argument. It creates a dictionary with the species name as the key and a list of the average estimated ages for the fossils of that species. Each fossil record has some uncertainty of its exact age, so its age is listed at the maximum age and the minimum age. These are averaged to find the mean age for that record. 
+  The second function takes a file to write to and a dictionary name as arguments. This function takes the genus name, species name, and highest and lowest age for that species and writes it to a new csv file.
+  In order to better visualize and compare the two timelines, some entries were removed from the Aves data file so that we are only looking at the age ranges that overlap. This was done in unix.
+  
+\clearpage  
+  
+```
+def ages_dict(filename):
+    newfile = filename
+    with open(newfile, 'r') as ff:
+        canid_recs = ff.readlines() #open file
+    from collections import defaultdict #download default dict
+
+    species_ages = defaultdict(list) #make an empty dictionary
+
+    for line in canid_recs:
+        taxon = line.split(",")[6]
+        if taxon == '"species"': #only continue if the line contains a species
+            species = line.split(",")[5] #extract species name
+            minage = line.split('","')[10] #extract upper age estimate
+            maxage = line.split('","')[11] #extract lower age estimate
+            mean_age = (float(minage) + float(maxage)) / 2 #find the average of the age estimates
+            species_ages[species].append(mean_age) #if the species is not already in the dictionary, make a new key with the species name and add the mean age as the value. If the species is in the dictionary ad the mean age to the value list
+    return(species_ages)
+
+def range_file(filename, dictname):
+    output = open(filename, "w")
+
+    for key in dictname.keys():
+        ages = dictname[key]
+        minage = min(ages) #extract lowest age
+        maxage = max(ages) #extract highest age
+        genus = key.replace('"','').split(" ")[0] #extract genus
+        species = key.replace('"','') #extract species
+        outline = "{},{},{},{}\n".format(genus,species,minage,maxage) #write format
+        output.write(outline) #write to new file
+    output.close()
+    
+#the following is unix code
+sort --field-separator=',' --key=3 -g  aves_ranges.csv > sorted_aves_ranges.csv #sort based on minimum age
+head -n 1027 sorted_aves_ranges.csv > sorted_aves_ranges1.csv #remove entries past 70 Ma ago
+```
+new output files:
+```{r, echo=FALSE}
+aves_range_data <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/sorted_aves_ranges1.csv", header = F, as.is = T)
+names(aves_range_data) <- c("genus", "species", "minage", "maxage")
+head(aves_range_data)
+laura_range_data <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/sorted_laura_ranges.csv", header = F, as.is = T)
+names(laura_range_data) <- c("genus", "species", "minage", "maxage")
+head(laura_range_data)
+```
+
+*For exploring Speciation and Extinction Rates:*
+
+First a program will be run in r to format our data for PyRate, but this program requires a list of all extant species for the group. To find the names of the extant species a python function, that identifies all unique occurences of species with a minimum age of 0 ma, is used. 
+```
+def extant_species_list(filename):
+    import numpy
+    with open(filename, 'r') as ff:
+        readfile = ff.readlines() #read the file
+    extant_species = [] #create our primary list
+    cleaned_extant_list = [] #create a cleaned list
+    for line in readfile:
+        taxon = line.split(",")[6] 
+        min_ma = line.split(",")[11]
+        if taxon == '"species"' and min_ma == '"0"': #only continue if the occurance is a species and its minimum age is 0
+            species_name = line.split(",")[5].replace('"','') #identify the species name
+            extant_species.append(species_name) #add the species name to the primary list
+    extant_list = numpy.unique(extant_species) #once the list is complete remove any repetitions of species names so that each name is unique
+    for item in extant_list:
+        cleaned_extant_list.append(item) #turn this list of unique names into a new list
+    print(cleaned_extant_list) #print the list
+```
+In an r script called process_laura_data.r, another r script is called to format the original data file using the newly created list of extant spceies. The data set for this portion should include a header labeling each column.
+```
+#tell the code where to find the formatting r script
+source("~/PyRate/pyrate_utilities.r")
+
+#give the list of extant species
+extant_mammals = c('Acinonyx jubatus', 'Alopex lagopus', 'Amblonyx cinerea', 'Antrozous pallidus', 'Aonyx capensis', 'Arctocephalus forsteri', 'Arctocephalus gazella', 'Arctocephalus pusillus', 'Arctocephalus townsendi', 'Arctodus simus', 'Arctotherium brasiliense', 'Arctotherium wingei', 'Artibeus jamaicensis', 'Atilax paludinosus', 'Bassaricyon gabbii', 'Bassariscus astutus', 'Blarina brevicauda', 'Brachyprotoma obtusata', 'Callorhinus ursinus', 'Canis adustus', 'Canis anthus', 'Canis aureus', 'Canis familiaris', 'Canis latrans', 'Canis lupus', 'Canis mesomelas', 'Caracal caracal', 'Caracal serval', 'Cerdocyon thous', 'Chrotopterus auritus', 'Chrysocyon brachyurus', 'Civettictis civetta', 'Conepatus semistriatus', 'Crocuta crocuta', 'Cryptoprocta ferox', 'Cryptotis parva', 'Cubacyon transversidens', 'Cynictis penicillata', 'Cystophora cristata', 'Desmodus draculae', 'Desmodus rotundus', 'Eira barbara', 'Enhydra lutris', 'Eptesicus fuscus', 'Erignathus barbatus', 'Eumetopias jubata', 'Eumops glaucinus', 'Eumops perotis', 'Felis libyca', 'Felis silvestris', 'Fossa fossana', 'Galictis vittata', 'Genetta genetta', 'Genetta tigrina', 'Gulo gulo', 'Halichoerus grypus', 'Herpestes ichneumon', 'Herpestes pulverulentus', 'Herpestes sanguineus', 'Histriophoca fasciata', 'Hyaena hyaena', 'Hydrurga leptonyx', 'Ichneumia albicauda', 'Ictonyx striatus', 'Lasionycteris noctivagans', 'Lasiurus borealis', 'Leopardus braccatus', 'Leopardus pardalis', 'Leopardus tigrinus', 'Leopardus wiedii', 'Leptonychotes weddelli', 'Lobodon carcinophaga', 'Lontra canadensis', 'Lontra longicaudis', 'Lutra lutra', 'Lutra maculicollis', 'Lycaon pictus', 'Lynx lynx', 'Lynx rufus', 'Martes martes', 'Martes zibellina', 'Meles meles', 'Mellivora capensis', 'Mephitis macroura', 'Mephitis mephitis', 'Mirounga angustirostris', 'Mirounga leonina', 'Monachus monachus', 'Mungos mungo', 'Mustela americana', 'Mustela erminea', 'Mustela frenata', 'Mustela nigripes', 'Mustela nivalis', 'Mustela vison', 'Myotis grisescens', 'Myotis lucifugus', 'Myotis velifer', 'Nasua nasua', 'Neomonachus schauinslandi', 'Neomonachus tropicalis', 'Neomys fodiens', 'Neophoca cinerea', 'Noctilio albiventris', 'Noctilio leporinus', 'Notiosorex crawfordi', 'Nyctereutes procyonoides', 'Odobenus rosmarus', 'Ommatophoca rossii', 'Otaria byronia', 'Otocyon megalotis', 'Pagophilus groenlandica', 'Paguma larvata', 'Panthera leo', 'Panthera onca', 'Panthera pardus', 'Panthera tigris', 'Parahyaena brunnea', 'Pekania pennanti', 'Phoca caspica', 'Phoca hispida', 'Phoca largha', 'Phoca vitulina', 'Phocarctos hookeri', 'Pipistrellus hesperus', 'Pipistrellus subflavus', 'Plecotus townsendii', 'Potos flavus', 'Procyon cancrivorus', 'Procyon lotor', 'Protocyon troglodytes', 'Pseudalopex gymnocercus', 'Pteronura brasiliensis', 'Puma concolor', 'Puma yagouaroundi', 'Pusa hispida', 'Pusa sibirica', 'Sardolutra ichnusae', 'Smilodon fatalis', 'Smilodon populator', 'Sorex arcticus', 'Sorex cinereus', 'Sorex dispar', 'Sorex fumeus', 'Sorex hoyi', 'Sorex palustris', 'Speothos venaticus', 'Spilogale putorius', 'Tadarida brasiliensis', 'Taxidea taxus', 'Trachops cirrhosus', 'Tremarctos floridanus', 'Urocyon cinereoargenteus', 'Ursus americanus', 'Ursus arctos', 'Ursus maritimus', 'Vulpes chama', 'Vulpes velox', 'Vulpes vulpes', 'Zalophus californianus')
+
+# use the extract.ages.pbdb() function in pyrate_utilities to reformat the data set
+extract.ages.pbdb(file= "pyrate_laura.csv",extant_species=extant_mammals)
+```
+The same code is repeated in process_aves_data.r using the list of extant aves species.
+```
+#tell the code where to find the formatting r script
+source("~/PyRate/pyrate_utilities.r")
+
+#give the list of extant species
+extant_birds = c('Accipiter fasciatus', 'Accipiter gentilis', 'Accipiter striatus', 'Aegolius acadicus', 'Aegotheles novaezealandiae', 'Alca torda', 'Alle alle', 'Anas acuta', 'Anas chlorotis', 'Anas crecca', 'Anas platyrhynchos', 'Anomalopteryx didiformis', 'Anser albifrons', 'Anthochaera carunculata', 'Anthochaera chrysoptera', 'Anthornis melanura', 'Apteribis brevis', 'Apteribis glenos', 'Aquila chrysaetos', 'Ardea herodias', 'Asio flammeus', 'Atlantisia podarces', 'Bonasa umbellus', 'Branta canadensis', 'Branta hylobadistes', 'Bubo sinclairi', 'Bubo virginianus', 'Bulweria bifax', 'Buteo buteo', 'Buteo jamaicensis', 'Cacatua roseicapilla', 'Cacatua tenuirostris', 'Caracara creightoni', 'Caracara plancus', 'Cathartes aura', 'Cepphus columba', 'Charadrius sanctaehelenae', 'Chelychelynechen quassus', 'Chenonetta finschi', 'Cinclosoma punctatum', 'Cnemiornis calcitrans', 'Colaptes auratus', 'Colinus virginianus', 'Columba livia', 'Colymbus nigricollis', 'Corvus corax', 'Coturnix novaezelandiae', 'Cyanocitta cristata', 'Dasyornis brachypterus', 'Dendragapus obscurus', 'Dendrocygna arborea', 'Dendrocygna autumnalis', 'Dinornis struthoides', 'Ectopistes migratorius', 'Emeus crassus', 'Eudyptes pachyrhynchus', 'Eudyptula minor', 'Euryapteryx geranoides', 'Falco cenchroides', 'Falco mexicanus', 'Falco sparverius', 'Fratercula arctica', 'Fratercula cirrhata', 'Fratercula corniculata', 'Fregata ariel', 'Fregata minor', 'Fulica americana', 'Fulica podagrica', 'Fulica prisca', 'Fulmarus glacialis', 'Gallinula chloropus', 'Gallinula mortierii', 'Gallirallus australis', 'Gallus gallus', 'Gavia immer', 'Geochen rhuax', 'Glossopsitta concinna', 'Grallistrix auceps', 'Grallistrix erdmani', 'Grus canadensis', 'Grus grus', 'Gygis alba', 'Haliaeetus albicilla', 'Haliaeetus leucocephalus', 'Hemiphaga novaeseelandiae', 'Larus dominicanus', 'Larus novaehollandiae', 'Megadyptes waitaha', 'Melanitta fusca', 'Melanitta nigra', 'Meleagris gallopavo', 'Melospiza melodia', 'Mergus merganser', 'Mergus serrator', 'Moho braccatus', 'Nannococcyx psix', 'Neochen barbadiana', 'Numenius tahitiensis', 'Nyctanassa violacea', 'Oceanodroma castro', 'Otus asio', 'Pachyornis elephantopus', 'Papasula abbotti', 'Pelagodroma marina', 'Pelecanus cadimurka', 'Pelecanus proavus', 'Pelecanus tirarensis', 'Petroica australis', 'Phaethon aethereus', 'Phaethon lepturus', 'Phalacrocorax carbo', 'Phalacrocorax pelagicus', 'Phaps chalcoptera', 'Phaps elegans', 'Pinguinus impennis', 'Platycercus elegans', 'Podilymbus podiceps', 'Porzana astrictocarpus', 'Porzana keplerorum', 'Porzana menehune', 'Porzana severnsi', 'Prosthemadera novaeseelandiae', 'Ptaiochen pau', 'Pterodroma cahow', 'Pterodroma hypoleuca', 'Pterodroma rupinarum', 'Ptilonorhynchus violaceus', 'Ptychoramphus aleuticus', 'Puffinus lherminieri', 'Puffinus pacificus', 'Puffinus spelaeus', 'Pygoscelis papua', 'Rallus longirostris', 'Rallus philippensis', 'Raphus cucullatus', 'Rhea americana', 'Rhipidura fuliginosa', 'Rissa tridactyla', 'Sceloglaux albifacies', 'Somateria mollissima', 'Spheniscus demersus', 'Sterna fuscata', 'Struthio camelus', 'Sula dactylatra', 'Sula sula', 'Synthliboramphus antiquus', 'Teratornis merriami', 'Turdus migratorius', 'Turnagra capensis', 'Turnix varia', 'Tyto alba', 'Uria aalge', 'Uria lomvia', 'Zenaida macroura')
+
+# use the extract.ages.pbdb() function in pyrate_utilities to reformat the dataset
+extract.ages.pbdb(file= "pyrate_aves.csv",extant_species=extant_birds)
+```
+In order to run pyrate, the 2.7 version of Python must be used. To switch the working terminal to this version use the following shell command.
+```
+source activate py27
+```
+To run PyRate and create the files that will eventually be used to visualize speciation and extinction rates, use the following shell code.
+```
+python ~/PyRate/PyRate.py inputfile_PyRate.py -n 1000000
+```
+The input file name will change depending on the name of the data file used in the r script that formatted the data for pyrate. The number of repetitions can also be changed, here 1,000,000 repetitions are used.
+
+\clearpage
+
+# Results
+
+## Comparing Locations
+```{r, echo = FALSE, fig.cap = "Fossil Locations", fig.width = 9, fig.height=6}
+library(ggplot2)
+library(ggmap)
+library(maps)
+library(mapdata)
+bird_locations <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/aves_genus_locations.csv", header = F, as.is = T)
+names(bird_locations) <- c("genus", "latitude", "longitude")
+mammal_locations <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/laura_genus_locations.csv")
+names(mammal_locations) <- c("genus", "latitude", "longitude")
+bird_locations$category <- rep("bird", nrow(bird_locations))
+bird_locations$color <- rep(alpha("blue", .1))
+mammal_locations$category <- rep("mammal", nrow(mammal_locations))
+mammal_locations$color <- rep(alpha("yellow", 1))
+all_records <- rbind(mammal_locations, bird_locations)
+world <- map_data("world")
+fossil_locations <- ggplot(all_records, aes(x = longitude, y = latitude, col = category)) + geom_point() + geom_polygon(data = world, aes(x=long, y=lat, group=group), fill = NA, color="black") + coord_fixed(1.3) + labs(title = "Fossil Occurences of Aves and Laurasiatheria", x = "Longitude", y = "Latitude") + theme(plot.title = element_text(size=18), axis.title = element_text(size = 16), legend.text = element_text(size = 14), legend.title = element_text(size = 14)) + scale_colour_manual(name="taxonomic group", values = c("bird"="#FFFF0080", "mammal"="#0000FF80"))
+fossil_locations
+```
+
+This map does little to help draw any conclusions about the way that birds and mammals actually interact, but it does help refine areas of interest. We see that the most overlap in fossil records occurs in the United States, Eastern Europe, and East Asia.
+
+## Exploring Fossil Timelines
+
+```{r, echo = FALSE, fig.width=5, fig.height=10, fig.align='center', fig.cap = "Aves Timeline"}
+library(forcats)
+library(ggplot2)
+aves <- read.csv("sorted_aves_ranges1.csv", header = F, as.is = T) #read in the file
+names(aves) <- c("genus", "species", "minage", "maxage") #name the categories
+aves_occ <- ggplot(aves, aes( x = fct_reorder(species, minage, .desc = T), maxage, colour = genus))
+
+aves_occ + geom_linerange(aes(ymin = minage, ymax = maxage + 0.5)) + theme(legend.position="none") +  coord_flip() +  theme(axis.text.y = element_text(size=1)) + scale_y_continuous(limits=c(0, 80), expand = c(0, 0), breaks=c(0, 10, 20, 30, 40, 50, 60, 70, 80)) + labs(title = "Aves Fossil Occurrences", x = "Species", y = "Ma ago") + theme(plot.title = element_text(hjust = 0.5, size=22, face = "bold"), axis.title =element_text(size=20)) 
+```
+
+In figure 2 we are able to visualize the amount of species and which species were present at a given time period. The color groups represent a common genus. From this graph we see that many new species appeared around 20 Ma ago and that the extant species present appeared around 5 Ma ago.
+
+```{r, fig.width = 5, fig.height = 10, fig.cap= "Laurasiatheria Timeline", echo=FALSE, fig.align='center'}
+laura <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/laura_ranges.csv", header = F, as.is = T) #read in the file
+names(laura) <- c("genus", "species", "minage", "maxage") #name the categories
+laura_occ <- ggplot(laura, aes( x = fct_reorder(species, minage, .desc = T), maxage, colour = genus))
+
+laura_occ + geom_linerange(aes(ymin = minage, ymax = maxage + 0.5)) + theme(legend.position="none") +  coord_flip() +  theme(axis.text.y = element_text(size=1)) + scale_y_continuous(limits=c(0, 70), expand = c(0, 0), breaks=c(0, 10, 20, 30, 40, 50, 60, 70)) + labs(title = "Laurasiatheria Fossil Occurrences", x = "Species", y = "Ma ago") + theme(plot.title = element_text(hjust = 0.5, size=19, face = "bold"), axis.title =element_text(size=20)) 
+```
+
+Figure 3 follows the same structure as the predceeding graph, but because the Laurasiatheria group contains more species it looks slightly different. However, it seems to follow a similar trend of regular loss and replenishment of species. This group appeared around 70 Ma and the extant species appeared around 7 Ma ago.
+
+```{r, echo = FALSE, fig.cap="diversity over time"}
+library(forcats)
+library(tidyr)
+library(dplyr)
+aves <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/sorted_aves_ranges1.csv", header = F, as.is = T)
+names(aves) <- c("genus", "species", "minage", "maxage")
+laura <- read.csv("/home/eeb177-student/Desktop/eeb-177/eeb-177-final-project/laura_ranges.csv", header = F, as.is = T)
+names(laura) <- c("genus", "species", "minage", "maxage")
+aves_diversity <- aves %>% gather(key = type, value = age, minage, maxage) %>% mutate(count = ifelse(type == "maxage", 1, -1)) %>% group_by(age) %>% summarise(count = sum(count))  %>% arrange(-age, -count) %>% mutate(diversity = cumsum(count)) 
+
+laura_diversity <- laura %>% gather(key = type, value = age, minage, maxage) %>% mutate(count = ifelse(type == "maxage", 1, -1)) %>% group_by(age) %>% summarise(count = sum(count))  %>% arrange(-age, -count) %>% mutate(diversity = cumsum(count))
+
+aves_diversity$category <- rep("Aves", nrow(aves_diversity))
+laura_diversity$category <-rep("Laurasiatheria", nrow(laura_diversity))
+diversity <- rbind(aves_diversity, laura_diversity)
+
+ggplot(diversity, aes(x = age, y = diversity, col = category)) + geom_step() + labs(title = "Diversity Over Time", x = "Ma ago", y = "Diversity") + theme(plot.title = element_text(hjust = .5, size = 18, face = "bold"), axis.title = element_text(size = 16))
+```
+
+This plot shows numerically, how many species are present at a given time and how that amount changes over time. Although the two graphs do not match up completely, trends common to both groups can still be seen. Both groups experice increases in species around 30 Ma and 17 Ma ago. They also experience decreases in species around 22 Ma and 5 Ma ago, before increasing greatly closer to present day.
+
+\clearpage
+
+## Exploring Extinction and Speciation Rates
+
+In order to visualize the PyRate projections, first navigate into the pyrate_mcmc_logs directory, then run the following unix code.
+```
+python ~/PyRate/PyRate.py -plot pyrate_aves_1_marginal_rates.log
+```
+The file can be changed depending on the group of interest, but the file will always be a marginal_rates.log file.
+
+\begin{figure}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth, height = 30cm]{pyrate_mcmc_logs/pyrate_aves_1_marginal_rates_RTT.pdf}
+  \caption{PyRate Aves Data Output}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth, height = 30cm]{pyrate_mcmc_logs/pyrate_laura_1_marginal_rates_RTT.pdf}
+  \caption{PyRate Laurasiatheria Data Output}
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+An important thing to note is that the projections for the Aves data covers a larger expanse of time than the Laurasiatheria data. When comparing the two sets only the comon time periods should be considered. In addition, all graphs display a sharp change towards present day, but this can be accounted for by the lack fossil records to provide information for estimations. The first figure estimates the change in speciation rate over time. Both data sets follow a similar pattern of a steady speciation rate around 0.2. The second figure estimates the change in extinction rate over time. Again, both data sets remain relatively constant around 0.1, but the Laurasiatheria data does gradually increase over time. The third figure projects the net diversification rate over time. Here, the aves data begins below 0 and gradually increases until it experiences a sharper increase around 10 Ma ago. The Laurasiatheria data remains above zero, but gradually decreases overall. The fourth figure displays the change in longevity over time. The Aves data gradually increases in longevity, but the Laurasiatheria data drastically decreases.
+
+\clearpage
+
+# Conclusion
+
+  Through the analysis of the paleobiogy fossil records for Aves and Laurasiatheria we see many similarities in the way that the groups have grown and changed over time. This is especially apparent in the predictions made by the PyRate program where larger trends can be visualized. Figure 4 indicates that although the two groups did not go through identical changes, they did go through the same general changes. This could indicate environmental influences that would be able to change both groups. Similarly, the PyRate projections were not identical, but did have similarities in their general trends.
+  These observations are useful in looking at trends as a whole because birds and mammals make up a large portion of the vertebrate population. With information about genetic trends throughout paleological history, we can use the information and observations gathered from this study to better understand changes in phenotypes through time. This information can also be useful when looking at important extinction and climate events throughout earth's history. Lastly, the map in figure 1 can narrow down the areas to observe when attempting to compare the history of birds and mammals.
+  Although this study does not allow for any conclusions about the causes of these trends to be made, it does provide information necessary for new studies 
+
+# Git Hub Link
+https://github.com/Madison2296/finalproject
+
+\clearpage
+
+# References
